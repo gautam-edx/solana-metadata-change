@@ -9,7 +9,8 @@ export default function Home() {
   const [provider, setprovider] = useState();
 
   async function connectPhantom(){
-    const provider = window.phantom?.solana;
+    // @ts-ignore
+    const provider = window.phantom.solana;
     const resp = await provider.request({ method: "connect" });
     console.log(resp.publicKey.toString());
     let ix = await getTransaction(resp.publicKey.toString());
