@@ -6,13 +6,13 @@ import * as anchor from '@project-serum/anchor';
 
 export async function getTransaction(pk : String){
     
-    const INITIALIZE = false;
+    const INITIALIZE = true;
  
         console.log("hello")
 
         let publicKey  =  new web3.PublicKey(pk);
        
-        const mint = new web3.PublicKey("9DaR7dPS2XvrZRTLPSBAPg5vekY529RqDtYxS8huoYFa");
+        const mint = new web3.PublicKey("p2yd1Cz5xEnkY9sKPQQvHvjMtSUeDqAksyfWKkT8ifY");
         const seed1 = Buffer.from(anchor.utils.bytes.utf8.encode("metadata"));
         const seed2 = Buffer.from(mpl.PROGRAM_ID.toBytes());
         const seed3 = Buffer.from(mint.toBytes());
