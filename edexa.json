@@ -1,0 +1,13 @@
+{
+    "name": "edeXa",
+    "symbol": "EDX",
+    "description": "The edeXa (EDX) Token is a fundamental component of the edeXa Business Blockchain, designed to empower and incentivize the platform's consensus process (PoA). It plays a pivotal role in the edeXa Universe by acting as both reward mechanism and customer transaction fee.",
+    "image": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/3Ysmnbdddpxv9xK8FUKXexdhRzEA4yrCz8WaE6Za5sjV/logo.svg",
+    "address": "3Ysmnbdddpxv9xK8FUKXexdhRzEA4yrCz8WaE6Za5sjV",
+    "tags": [
+        "utility-token"
+      ],
+      "extensions": {
+        "website": "https://edexa.network/"
+      }
+}
