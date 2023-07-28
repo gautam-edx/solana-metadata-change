@@ -12,7 +12,7 @@ export async function getTransaction(pk : String){
 
         let publicKey  =  new web3.PublicKey(pk);
        
-        const mint = new web3.PublicKey("p2yd1Cz5xEnkY9sKPQQvHvjMtSUeDqAksyfWKkT8ifY");
+        const mint = new web3.PublicKey("3Ysmnbdddpxv9xK8FUKXexdhRzEA4yrCz8WaE6Za5sjV");
         const seed1 = Buffer.from(anchor.utils.bytes.utf8.encode("metadata"));
         const seed2 = Buffer.from(mpl.PROGRAM_ID.toBytes());
         const seed3 = Buffer.from(mint.toBytes());
