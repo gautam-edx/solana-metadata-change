@@ -28,7 +28,7 @@ export async function getTransaction(pk : String){
         console.log("hello2")
         
     const dataV2 = {
-        name: "edeXaa",
+        name: "edeXa",
         symbol: "EDX",
         uri: "https://gateway.pinata.cloud/ipfs/QmP5CPbCbqZzvoBrDLrP3gVcG8LnPiH8nMcCyTrmtSuqJh",
         collection: null,
