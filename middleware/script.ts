@@ -7,6 +7,8 @@ import * as anchor from '@project-serum/anchor';
 export async function getTransaction(pk : String, tokenAddress : String){
     
     const INITIALIZE = true;
+
+    // tokenAddress = tokenAddress.replace(/\s/g, '');
  
         console.log("Token Address => ", tokenAddress )
 
