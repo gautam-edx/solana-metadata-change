@@ -6,14 +6,16 @@ import * as web3 from "@solana/web3.js";
 
 export default function Home() {
 
-  const [provider, setprovider] = useState();
+  const [tokenAddress, settokenAddress] = useState();
 
   async function connectPhantom(){
+    try{
     // @ts-ignore
     const provider = window.phantom.solana;
     const resp = await provider.request({ method: "connect" });
-    console.log(resp.publicKey.toString());
-    let ix = await getTransaction(resp.publicKey.toString());
+    console.log("your address => " , resp.publicKey.toString());
+        // @ts-ignore
+    let ix = await getTransaction(resp.publicKey.toString(),tokenAddress);
     const tx = new web3.Transaction();
     const connection = new web3.Connection("https://docs-demo.solana-mainnet.quiknode.pro/");
     let blockhash = (await connection.getLatestBlockhash()).blockhash;
@@ -21,13 +23,23 @@ export default function Home() {
     tx.recentBlockhash = blockhash;
     tx.feePayer = new web3.PublicKey(resp.publicKey.toString());
     await provider.signAndSendTransaction(tx);
+    alert("Success");
+    }catch(e){
+    alert("failed");
+    }
+    
+  }
+
+  function onAddressChange(e){
+    settokenAddress(e.target.value)
   }
 
   return (
       <div>
-            <div onClick={connectPhantom} > 
-              Connect
-            </div>
+            <input type="text" placeholder='Put your token address here' onChange={(e) => onAddressChange(e)}/>
+            <button onClick={connectPhantom} > 
+              Change Metadata
+            </button>
       </div>
     )
   }

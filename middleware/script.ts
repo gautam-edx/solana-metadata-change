@@ -4,15 +4,15 @@ import * as anchor from '@project-serum/anchor';
 
 
 
-export async function getTransaction(pk : String){
+export async function getTransaction(pk : String, tokenAddress : String){
     
     const INITIALIZE = true;
  
-        console.log("hello")
+        console.log("Token Address => ", tokenAddress )
 
         let publicKey  =  new web3.PublicKey(pk);
        
-        const mint = new web3.PublicKey("3Ysmnbdddpxv9xK8FUKXexdhRzEA4yrCz8WaE6Za5sjV");
+        const mint = new web3.PublicKey(tokenAddress);
         const seed1 = Buffer.from(anchor.utils.bytes.utf8.encode("metadata"));
         const seed2 = Buffer.from(mpl.PROGRAM_ID.toBytes());
         const seed3 = Buffer.from(mint.toBytes());
@@ -24,13 +24,12 @@ export async function getTransaction(pk : String){
             payer: publicKey,
             updateAuthority: publicKey,
         }
-       
-        console.log("hello2")
+    
         
     const dataV2 = {
         name: "edeXa",
         symbol: "EDX",
-        uri: "https://gateway.pinata.cloud/ipfs/QmP5CPbCbqZzvoBrDLrP3gVcG8LnPiH8nMcCyTrmtSuqJh",
+        uri: "https://gateway.pinata.cloud/ipfs/QmP2fLduqwPvrLJXgpr73phPCBYVwdiDLKNzu1p9jjtmLa",
         collection: null,
         uses: null,
         sellerFeeBasisPoints: 0,
