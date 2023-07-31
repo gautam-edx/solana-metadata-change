@@ -29,7 +29,7 @@ export default function Home() {
     }
     
   }
-
+// @ts-ignore
   function onAddressChange(e){
     settokenAddress(e.target.value)
   }
